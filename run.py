@@ -31,6 +31,8 @@ def survey_input():
         print(f' your gener is {gender_input_str}\n')
         print(f' your lunch choice is {Food_Choice_input_str}\n') 
         print(f' you answer {buy_again_input_str} for buying again\n')
+
+        break
         
     
 survey_data = survey_input()
