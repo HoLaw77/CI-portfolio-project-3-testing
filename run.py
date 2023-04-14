@@ -32,6 +32,15 @@ def survey_input():
         print(f' your lunch choice is {Food_Choice_input_str}\n') 
         print(f' you answer {buy_again_input_str} for buying again\n')
 
+        lunch_choice = []
+        age = {age_input_str}
+        gender = {gender_input_str}
+        food_choice = {Food_Choice_input_str}
+        buy_again_choice = {buy_again_input_str}
+        for n in (age, gender, food_choice, buy_again_choice):
+            lunch_choice.append(n)
+        print(lunch_choice)
+
         break
         
     
