@@ -11,8 +11,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('lunch_survey')
 
-sales = SHEET.worksheet('sales')
-data = sales.get_all_values()
 
 def survey_input():
     """
@@ -33,6 +31,9 @@ def survey_input():
         print(f' your gener is {gender_input_str}\n')
         print(f' your lunch choice is {Food_Choice_input_str}\n') 
         print(f' you answer {buy_again_input_str} for buying again\n')
+        
     
 survey_data = survey_input()
-print(survey_data)
+
+
+
