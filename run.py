@@ -37,8 +37,8 @@ def survey_input():
         lunch_choice["gender"] = gender_input_str
         lunch_choice["food_choice"] = Food_Choice_input_str
         lunch_choice["buy_again_choice"] = buy_again_input_str
-        for n in (age, gender, food_choice, buy_again_choice):
-            lunch_choice.append(n)
+        #for n in (age_input_str, gender_input_str, Food_Choice_input_str, buy_again_input_str):
+        #    lunch_choice.append(n)
         print(lunch_choice)
         validate_survey(lunch_choice)
         break
@@ -51,12 +51,9 @@ def validate_survey(values):
         if lunch_choice["age"].isnumeric() is not True:
             raise ValueError(
                 f'Exact number is required for age, you have entered {age}'
-            )
+                )
     except ValueError as e:
-        print(f'Invalid data: {e}, please try again')
-               
-
-
+            print(f'Invalid data: {e}, please try again')            
 survey_data = survey_input()
 
 
