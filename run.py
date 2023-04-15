@@ -32,18 +32,31 @@ def survey_input():
         print(f' your lunch choice is {Food_Choice_input_str}\n') 
         print(f' you answer {buy_again_input_str} for buying again\n')
 
-        lunch_choice = []
-        age = {age_input_str}
-        gender = {gender_input_str}
-        food_choice = {Food_Choice_input_str}
-        buy_again_choice = {buy_again_input_str}
+        lunch_choice = {}
+        lunch_choice["age"] = age_input_str
+        lunch_choice["gender"] = gender_input_str
+        lunch_choice["food_choice"] = Food_Choice_input_str
+        lunch_choice["buy_again_choice"] = buy_again_input_str
         for n in (age, gender, food_choice, buy_again_choice):
             lunch_choice.append(n)
         print(lunch_choice)
-
+        validate_survey(lunch_choice)
         break
         
-    
+def validate_survey(values):
+    """
+    Test if each value type matches. String for gender, food_choice, buy_again_choice, and number for age in the try statement 
+    """
+    try: 
+        if lunch_choice["age"].isnumeric() is not True:
+            raise ValueError(
+                f'Exact number is required for age, you have entered {age}'
+            )
+    except ValueError as e:
+        print(f'Invalid data: {e}, please try again')
+               
+
+
 survey_data = survey_input()
 
 
