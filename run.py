@@ -90,10 +90,10 @@ def update_worksheet(data):
     Update google spreadsheet for survey input
     """
     survey_worksheet = SHEET.worksheet("sales")
-    survey_worksheet.worksheet.append_row(data)
+    survey_worksheet.append_row(data)
     print("updating worksheet")
     print("Worksheet updated successfully.\n")
 
 data = survey_input()
-lunch_survey_data = [i for i in lunch_choice]
+lunch_survey_data = [i for i in "lunch_choice"]
 update_worksheet(data)
