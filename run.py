@@ -48,13 +48,13 @@ def validate_survey(values):
     Test if each value type matches. String for gender, food_choice, buy_again_choice, and number for age in the try statement 
     """
     try: 
-        if lunch_choice["age"].isnumeric() is not True:
+        if lunch_choice["age"].isnumeric() != True:
             raise ValueError(
                 f'Exact number is required for age, you have entered {age}'
                 )
     except ValueError as e:
-            print(f'Invalid data: {e}, please try again')            
-survey_data = survey_input()
+        print(f'Invalid data: {e}, please try again')            
 
 
+survey_input()
 
