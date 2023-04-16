@@ -58,7 +58,7 @@ def validate_survey(values):
         return False      
 
     try:
-        if values["gender"] != "Male" or "Female":
+        if values["gender"] not in ("Male", "Female"):
             raise ValueError(
                 f'You can only be either Male or Female, you have entered {values["gender"]}'
             )      
@@ -67,7 +67,7 @@ def validate_survey(values):
         return False
     
     try:
-        if values["food_choice"] != "Fish and Chip" or "Salad" or "Sandwich" or "Noodle":
+        if values["food_choice"] not in ("Fish and Chip", "Salad", "Sandwich", "Noodle"):
             raise ValueError(
                 f'We are researching on the most common lunch type you can get on Tesco, you have chosen {values["food_choice"]}'
             )     
@@ -76,7 +76,7 @@ def validate_survey(values):
         return False
     
     try:
-        if values["buy_again_choice"] != "Yes" or "No":
+        if values["buy_again_choice"] not in ("Yes", "No"):
             raise ValueError(
                 f'You can either say yes or no for buy again, you have chosen {values["buy_again_choice"]}'
             )     
@@ -84,5 +84,16 @@ def validate_survey(values):
         print(f'Invalid data: {e}, please try again\n')
         return False
     return True
-survey_input()
 
+def update_worksheet(data):
+    """
+    Update google spreadsheet for survey input
+    """
+    survey_worksheet = SHEET.worksheet("sales")
+    sales.worksheet.append_row(data)
+    print("updating worksheet")
+    print("Worksheet updated successfully.\n")
+
+data = survey_input()
+print(data)
+update_worksheet(data)
