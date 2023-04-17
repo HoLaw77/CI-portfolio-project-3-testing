@@ -32,11 +32,12 @@ def survey_input():
         print(f' your lunch choice is {Food_Choice_input_str}\n') 
         print(f' you answer {buy_again_input_str} for buying again\n')
 
-        lunch_choice = {}
-        lunch_choice["Age"] = age_input_str
-        lunch_choice["Gender"] = gender_input_str
-        lunch_choice["Food_Choice"] = Food_Choice_input_str
-        lunch_choice["Buy_Again_Choice"] = buy_again_input_str
+        lunch_choice = []
+        lunch_choice.append(age_input_str)
+        lunch_choice.append(gender_input_str)
+        lunch_choice.append(Food_Choice_input_str)
+        lunch_choice.append(buy_again_input_str)
+        print(lunch_choice)
         #for n in (age_input_str, gender_input_str, Food_Choice_input_str, buy_again_input_str):
         #    lunch_choice.append(n)
         print(lunch_choice)
@@ -91,7 +92,7 @@ def update_worksheet(data):
     Update google spreadsheet for survey input
     """
     survey_worksheet = SHEET.worksheet("sales")
-    survey_worksheet.worksheet.append_column(data)
+    survey_worksheet.append_row(data)
     print("updating worksheet")
     print("Worksheet updated successfully.\n")
 
