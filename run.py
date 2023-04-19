@@ -11,7 +11,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('lunch_survey')
 
-
 def survey_input():
     """
     Create input for user to input survey data
