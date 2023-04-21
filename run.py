@@ -39,24 +39,25 @@ def survey_input():
         #for n in (age_input_str, gender_input_str, Food_Choice_input_str, buy_again_input_str):
         #    lunch_choice.append(n)
         print(lunch_choice)
-        if validate_survey(lunch_choice):
-            print("survey input valid.")
-            break
+        #if validate_survey(lunch_choice):
+        #    print("survey input valid.")
+        break
+
     return lunch_choice
 
-def validate_survey(values):
-    """
-    Test if each value type matches. String for gender, food_choice, buy_again_choice, and number for age in the try statement 
-    """
-    try:
-        if {age_input_str}.isdigit() != True:
-            raise ValueError(
-                f'Please provide exact number for age. you provided {age_input_str}'
-            )
-        except ValueError as e:
-            print(f"Invalid data: {e}, Please try again.")
+#def validate_survey(values):
+ #   """
+  #  Test if each value type matches. String for gender, food_choice, buy_again_choice, and number for age in the try statement 
+   # """
+    #try:
+     #   if {age_input_str} none or {gender_input_str} none or {Food_Choice_input_str} none or {buy_again_input_str}:
+      #      raise ValueError(
+       #         f'Please provide exact number for age. you provided {age_input_str}'
+        #    )
+        #except ValueError as e:
+         #   print(f"Invalid data: {e}, Please try again.")
         
-        if {gender_input_str} != 
+        #if {gender_input_str} != 
 
 
 
