@@ -25,11 +25,18 @@ def survey_input():
         gender_input_str = input("Enter your gender here:\n")
         Food_Choice_input_str = input("Enter your food choice here:\n")
         buy_again_input_str = input("Enter your if you will buy again here:\n")
-
-        print(f' you are {age_input_str} years old\n')
-        print(f' your gener is {gender_input_str}\n')
-        print(f' your lunch choice is {Food_Choice_input_str}\n') 
-        print(f' you answer {buy_again_input_str} for buying again\n')
+        if {age_input_str}.isnum(): 
+            print(f' you are {age_input_str} years old\n')
+        else: 
+            raise ValueError(f'Please provide a number')
+        if {gender_input_str} == Male: 
+            print(f' your gener is {gender_input_str}\n')
+        elif {gender_input_str} == Female: 
+            print(f' your gener is {gender_input_str}\n')
+        if {Food_Choice_input_str} == ("Fish and Chip" or "Salad" or "Sandwich" or "Noodle"):
+            print(f' your lunch choice is {Food_Choice_input_str}\n') 
+        if {buy_again_input_str} == ("yes" or "no"):
+            print(f' you answer {buy_again_input_str} for buying again\n')
         lunch_choice = []
         lunch_choice.append(age_input_str)
         lunch_choice.append(gender_input_str)
@@ -39,25 +46,25 @@ def survey_input():
         #for n in (age_input_str, gender_input_str, Food_Choice_input_str, buy_again_input_str):
         #    lunch_choice.append(n)
         print(lunch_choice)
-        #if validate_survey(lunch_choice):
-        #    print("survey input valid.")
-        break
+        if validate_survey(lunch_choice):
+            print("survey input valid.")
+            break
 
     return lunch_choice
 
-#def validate_survey(values):
- #   """
-  #  Test if each value type matches. String for gender, food_choice, buy_again_choice, and number for age in the try statement 
-   # """
+def validate_survey(values):
+    """
+    Test if each value type matches. String for gender, food_choice, buy_again_choice, and number for age in the try statement 
+    """
     #try:
-     #   if {age_input_str} none or {gender_input_str} none or {Food_Choice_input_str} none or {buy_again_input_str}:
+     #   if {age_input_str} none or {gender_input_str} none or {Food_Choice_input_str} none or {buy_again_input_str} none:
       #      raise ValueError(
-       #         f'Please provide exact number for age. you provided {age_input_str}'
+       #         f'Please answer all questions required.'
         #    )
         #except ValueError as e:
          #   print(f"Invalid data: {e}, Please try again.")
         
-        #if {gender_input_str} != 
+        
 
 
 
