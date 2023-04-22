@@ -11,12 +11,13 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('lunch_survey')
 
+
 def survey_input():
     """
     Create input for user to input survey data
     """
     while True:
-        print('It is an anonymous survey on lunch choice. we do not need to know your name.\n')
+        print('It is an anonymous survey on lunch choice.\n')
         print('But we need your age, gender, Food choice and are you willing to buy again\n')
         print('Food choice: Fish and Chip/Salad/Sandwich/Noodle\n')
         print('buy again: yes/no\n')
@@ -25,18 +26,12 @@ def survey_input():
         gender_input_str = input("Enter your gender here:\n")
         Food_Choice_input_str = input("Enter your food choice here:\n")
         buy_again_input_str = input("Enter your if you will buy again here:\n")
-        if {age_input_str}.isnum(): 
-            print(f' you are {age_input_str} years old\n')
-        else: 
-            raise ValueError(f'Please provide a number')
-        if {gender_input_str} == Male: 
-            print(f' your gener is {gender_input_str}\n')
-        elif {gender_input_str} == Female: 
-            print(f' your gener is {gender_input_str}\n')
-        if {Food_Choice_input_str} == ("Fish and Chip" or "Salad" or "Sandwich" or "Noodle"):
-            print(f' your lunch choice is {Food_Choice_input_str}\n') 
-        if {buy_again_input_str} == ("yes" or "no"):
-            print(f' you answer {buy_again_input_str} for buying again\n')
+        print(f' you are {age_input_str} years old\n') 
+        print(f' your gener is {gender_input_str}\n')
+        print(f' your gener is {gender_input_str}\n')
+        print(f' your lunch choice is {Food_Choice_input_str}\n') 
+        print(f' you answer {buy_again_input_str} for buying again\n')
+        
         lunch_choice = []
         lunch_choice.append(age_input_str)
         lunch_choice.append(gender_input_str)
