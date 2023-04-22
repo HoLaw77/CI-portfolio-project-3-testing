@@ -51,13 +51,14 @@ def validate_survey(values):
     """
     Test if each value type matches. String for gender, food_choice, buy_again_choice, and number for age in the try statement 
     """
-    #try:
-     #   if {age_input_str} none or {gender_input_str} none or {Food_Choice_input_str} none or {buy_again_input_str} none:
-      #      raise ValueError(
-       #         f'Please answer all questions required.'
-        #    )
-        #except ValueError as e:
-         #   print(f"Invalid data: {e}, Please try again.")
+    try:
+        if values == None:
+            raise ValueError(
+                f'Please answer all questions required.'
+            )
+        
+    except ValueError as e:
+        print(f"Invalid data: {e}, Please try again.")
         
         
 
