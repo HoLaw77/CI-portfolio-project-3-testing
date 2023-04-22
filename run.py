@@ -43,7 +43,7 @@ def survey_input():
         print(lunch_choice)
         if validate_survey(lunch_choice):
             print("survey input valid.")
-            break
+        break
 
     return lunch_choice
 
