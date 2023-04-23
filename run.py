@@ -125,7 +125,7 @@ def survey_result(data):
     """
     Count the number of each food choice and print the result in console
     """
-    number_salad = SHEET.worksheet("salad_sales")   
+    number_salad = data.count("Yes")   
     print(f'The number of people who wants to buy sandwich again is {number_salad}')
 
 def main():
