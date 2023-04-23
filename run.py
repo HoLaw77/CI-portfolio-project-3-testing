@@ -26,6 +26,7 @@ def survey_input():
         gender_input_str = input("Enter your gender here:\n")
         Food_Choice_input_str = input("Enter your food choice here:\n")
         buy_again_input_str = input("Enter your if you will buy again here:\n")
+        
         print(f' you are {age_input_str} years old\n') 
         print(f' your gener is {gender_input_str}\n')
         print(f' your gener is {gender_input_str}\n')
@@ -41,24 +42,24 @@ def survey_input():
         #for n in (age_input_str, gender_input_str, Food_Choice_input_str, buy_again_input_str):
         #    lunch_choice.append(n)
         print(lunch_choice)
-        if validate_survey(lunch_choice):
-            print("survey input valid.")
+       # if validate_survey(lunch_choice):
+        #    print("survey input valid.")
         break
 
     return lunch_choice
 
-def validate_survey(values):
-    """
-    Test if each value type matches. String for gender, food_choice, buy_again_choice, and number for age in the try statement 
-    """
-    try:
-        if values == None:
-            raise ValueError(
-                f'Please answer all questions required.'
-            )
+#def validate_survey(values):
+ #   """
+  #  Test if each value type matches. String for gender, food_choice, buy_again_choice, and number for age in the try statement 
+   # """
+    #try:
+     #   if values == None:
+      #      raise ValueError(
+       #         f'Please answer all questions required.'
+        #    )
         
-    except ValueError as e:
-        print(f"Invalid data: {e}, Please try again.")
+    #except ValueError as e:
+     #   print(f"Invalid data: {e}, Please try again.")
         
         
 
