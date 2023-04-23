@@ -85,21 +85,50 @@ def Get_popular_product(data):
     sandwich_sales = SHEET.worksheet("sandwich_sales").get_all_values()
     pprint(sales)
 
-def import_salad_sales(data):
+def update_Noodles_sales(data):
+    """
+    import sales data limited to noodles to worksheet
+    """
+    if data[2] == "Noodles":
+        noodle_sheet = SHEET.worksheet("noodle_sales")
+        noodle_sheet.append_row(data)
+        print("noodle_sales sheet successfully updated")
+
+def update_salad_sales(data):
     """
     import sales data limited to salad to worksheet
     """
-    for x in data[3]:
-        if x == "salad":
-           print(x)    
+    if data[2] == "salad":
+        salad_sheet = SHEET.worksheet("salad_sales")
+        salad_sheet.append_row(data)
+        print("salad_sales sheet successfully updated")
 
+def update_sandwich_sales(data):
+    """
+    import sales data limited to sandwich to worksheet
+    """
+    if data[2] == "sandwich":
+        sandwich_sheet = SHEET.worksheet("sandwich_sales")
+        sandwich_sheet.append_row(data)
+        print("sandwich_sales sheet successfully updated")
 
+def update_Fish_and_Chip_sales(data):
+    """
+    import sales data limited to Fish and Chips to worksheet
+    """
+    if data[2] == "Fish and Chip":
+        sandwich_sheet = SHEET.worksheet("fish_and_chip_sales")
+        sandwich_sheet.append_row(data)
+        print("fish_and_chip_sales sheet successfully updated")
 def main():
     """Run all programme function"""
     data = survey_input()
     lunch_survey_data = [i for i in "lunch_choice"]
     update_worksheet(data)
     Get_popular_product(data)
-    import_salad_sales(data)
+    update_salad_sales(data)
+    update_Noodles_sales(data)
+    update_sandwich_sales(data)
+    update_Fish_and_Chip_sales(data)
 print("Welcome to Lunch Survery Data Automation\n")
 main()
