@@ -89,7 +89,7 @@ def update_Noodles_sales(data):
     """
     import sales data limited to noodles to worksheet
     """
-    if data[2] == "Noodles":
+    if data[2] == "Noodle":
             noodle_sheet = SHEET.worksheet("noodle_sales")
             noodle_sheet.append_row(data)
             print("noodle_sales sheet successfully updated")
@@ -125,8 +125,30 @@ def survey_result(data):
     """
     Count the number of each food choice and print the result in console
     """
-    number_salad = data.count("Yes")   
-    print(f'The number of people who wants to buy sandwich again is {number_salad}')
+    salad_result = SHEET.worksheet("salad_sales").get_all_values()
+    number_salad = sum(num.count("Yes") for num in salad_result)
+    male_salad = sum(x.count("Male") for x in salad_result)
+    female_salad = sum(y.count("Female") for y in salad_result) 
+    print(f'The number of people who wants to buy salad again is {number_salad}, male:{male_salad}, female:{female_salad}')
+    
+    fish_and_chip_result = SHEET.worksheet("fish_and_chip_sales").get_all_values()
+    number_fish_and_chip = sum(num.count("Yes") for num in fish_and_chip_result) 
+    male_fish_and_chip = sum(x.count("Male") for x in fish_and_chip_result)
+    female_fish_and_chip = sum(y.count("Female") for y in fish_and_chip_result) 
+    print(f'The number of people who wants to buy fish and chip again is {number_fish_and_chip}, male:{male_fish_and_chip}, female:{female_fish_and_chip}')
+
+    sandwich_result = SHEET.worksheet("sandwich_sales").get_all_values()
+    number_sandwich = sum(num.count("Yes") for num in sandwich_result)
+    male_sandwich = sum(x.count("Male") for x in sandwich_result)
+    female_sandwich = sum(y.count("Female") for y in sandwich_result) 
+    print(f'The number of people who wants to buy sandwich again is {number_sandwich}, male:{male_sandwich}, female:{female_sandwich}')
+
+    noodle_result = SHEET.worksheet("noodle_sales").get_all_values()
+    number_noodle = sum(num.count("Yes") for num in noodle_result)
+    male_noodle = sum(x.count("Male") for x in noodle_result)
+    female_noodle = sum(y.count("Female") for y in noodle_result) 
+    print(f'The number of people who wants to buy noodle again is {number_noodle}, male:{male_noodle}, female:{female_noodle}')
+
 
 def main():
     """Run all programme function"""
