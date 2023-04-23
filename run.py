@@ -1,5 +1,6 @@
 import gspread
 from google.oauth2.service_account import Credentials
+from pprint import pprint
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -48,18 +49,16 @@ def survey_input():
 
     return lunch_choice
 
-#def validate_survey(values):
- #   """
-  #  Test if each value type matches. String for gender, food_choice, buy_again_choice, and number for age in the try statement 
-   # """
-    #try:
-     #   if values == None:
-      #      raise ValueError(
-       #         f'Please answer all questions required.'
-        #    )
-        
-    #except ValueError as e:
-     #   print(f"Invalid data: {e}, Please try again.")
+def validate_survey(values):
+    """
+    Test if each value type matches. String for gender, food_choice, buy_again_choice, and number for age in the try statement 
+    """
+    try:
+        [int(value) for value in values]
+        raise ValueError(f'Please answer all questions required.')
+
+    except ValueError as e:
+        print(f"Invalid data: {e}, Please try again.")
         
         
 
@@ -74,7 +73,25 @@ def update_worksheet(data):
     print("updating worksheet")
     print("Worksheet updated successfully.\n")
 
+def Get_popular_product(data):
+    """
+    Get popular product from the buy_again_input and compare with food_choice_input
+    """
+    print('Sales survey result processing...')
+    sales = SHEET.worksheet("sales").get_all_values()
+    salad_sales = SHEET.worksheet("salad_sales").get_all_values()
+    fish_and_chip_sales = SHEET.worksheet("fish_and_chip_sales").get_all_values()
+    noodle_sales = SHEET.worksheet("noodle_sales").get_all_values()
+    sandwich_sales = SHEET.worksheet("sandwich_sales").get_all_values()
+    pprint(sales)
 
-data = survey_input()
-lunch_survey_data = [i for i in "lunch_choice"]
-update_worksheet(data)
+
+def main():
+    """Run all programme function"""
+    data = survey_input()
+    lunch_survey_data = [i for i in "lunch_choice"]
+    update_worksheet(data)
+    Get_popular_product(data)
+
+print("Welcome to Lunch Survery Data Automation\n")
+main()
