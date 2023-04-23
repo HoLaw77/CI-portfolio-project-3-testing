@@ -85,6 +85,14 @@ def Get_popular_product(data):
     sandwich_sales = SHEET.worksheet("sandwich_sales").get_all_values()
     pprint(sales)
 
+def import_salad_sales(data):
+    """
+    import sales data limited to salad to worksheet
+    """
+    for x in data[3]:
+        if x == "salad":
+           print(x)    
+
 
 def main():
     """Run all programme function"""
@@ -92,6 +100,6 @@ def main():
     lunch_survey_data = [i for i in "lunch_choice"]
     update_worksheet(data)
     Get_popular_product(data)
-
+    import_salad_sales(data)
 print("Welcome to Lunch Survery Data Automation\n")
 main()
