@@ -24,12 +24,12 @@ def survey_input():
         print('buy again: yes/no\n')
 
         age_input_str = input("Enter your age here:\n")
+
         gender_input_str = input("Enter your gender here:\n")
         Food_Choice_input_str = input("Enter your food choice here:\n")
         buy_again_input_str = input("Enter your if you will buy again here:\n")
-        
+
         print(f' you are {age_input_str} years old\n') 
-        print(f' your gener is {gender_input_str}\n')
         print(f' your gener is {gender_input_str}\n')
         print(f' your lunch choice is {Food_Choice_input_str}\n') 
         print(f' you answer {buy_again_input_str} for buying again\n')
@@ -43,8 +43,8 @@ def survey_input():
         #for n in (age_input_str, gender_input_str, Food_Choice_input_str, buy_again_input_str):
         #    lunch_choice.append(n)
         print(lunch_choice)
-       # if validate_survey(lunch_choice):
-        #    print("survey input valid.")
+        if validate_survey(lunch_choice):
+            print("survey input valid.")
         break
 
     return lunch_choice
@@ -54,16 +54,27 @@ def validate_survey(values):
     Test if each value type matches. String for gender, food_choice, buy_again_choice, and number for age in the try statement 
     """
     try:
-        [int(value) for value in values]
-        raise ValueError(f'Please answer all questions required.')
+        if values[0].isnumeric() == False:
+            raise ValueError(f'Please provide a number for age')
 
     except ValueError as e:
+        print(f"Invalid data: {e}, Please try again.")    
+    try:  
+        if values[1] != ("Male" or "Female"):
+            raise  ValueError(f'Please provide a valid gender')
+    except ValueError as e:
         print(f"Invalid data: {e}, Please try again.")
-        
-        
-
-
-
+    try:                
+        if values[2] != ("salad" or "Noodle" or "sandwich" or "Fish and Chip"):
+            raise  ValueError(f'Please choose from the provided options')
+    except ValueError as e:
+        print(f"Invalid data: {e}, Please try again.")
+    try:
+        if values[3] != ("Yes" or "No"):
+            raise ValueError(f'Please specify you willingness to buy again')   
+    except ValueError as e:
+        print(f"Invalid data: {e}, Please try again.")
+                   
 def update_worksheet(data):
     """
     Update google spreadsheet for survey input
@@ -154,6 +165,7 @@ def main():
     """Run all programme function"""
     data = survey_input()
     lunch_survey_data = [i for i in "lunch_choice"]
+    validate_survey(data)
     update_worksheet(data)
     Get_popular_product(data)
     update_salad_sales(data)
