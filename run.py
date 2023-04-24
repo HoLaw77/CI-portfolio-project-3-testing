@@ -61,12 +61,12 @@ def validate_survey(values):
         print(f"Invalid data: {e}, Please try again.")    
     try:  
         if values[1] != ("Male" or "Female"):
-            raise  ValueError(f'Please provide a valid gender')
+            raise ValueError(f'Please provide a valid gender')
     except ValueError as e:
         print(f"Invalid data: {e}, Please try again.")
     try:                
         if values[2] != ("salad" or "Noodle" or "sandwich" or "Fish and Chip"):
-            raise  ValueError(f'Please choose from the provided options')
+            raise ValueError(f'Please choose from the provided options')
     except ValueError as e:
         print(f"Invalid data: {e}, Please try again.")
     try:
