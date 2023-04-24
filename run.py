@@ -59,22 +59,25 @@ def validate_survey(values):
         
     except ValueError as e:
         print(f"Invalid data: {e}, Please try again.")    
+        
     try:  
         if values[1] != ("Male" or "Female"):
             raise ValueError(f'Please provide a valid gender')
     except ValueError as e:
         print(f"Invalid data: {e}, Please try again.")
+        
     try:                
         if values[2] != ("salad" or "Noodle" or "sandwich" or "Fish and Chip"):
             raise ValueError(f'Please choose from the provided options')
     except ValueError as e:
         print(f"Invalid data: {e}, Please try again.")
+        
     try:
         if values[3] != ("Yes" or "No"):
             raise ValueError(f'Please specify you willingness to buy again')   
     except ValueError as e:
         print(f"Invalid data: {e}, Please try again.")
-                   
+              
 def update_worksheet(data):
     """
     Update google spreadsheet for survey input
