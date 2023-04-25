@@ -56,7 +56,7 @@ def validate_survey(values):
     try:
         if values[0].isnumeric() == False:
             raise ValueError(f'Please provide a number for age')
-        
+            
     except ValueError as e:
         print(f"Invalid data: {e}, Please try again.")    
         
