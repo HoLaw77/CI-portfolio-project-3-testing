@@ -24,7 +24,7 @@ def survey_input():
         print('buy again: yes/no\n')
 
         age_input_str = input("Enter your age here:\n")
-
+        
         gender_input_str = input("Enter your gender here:\n")
         Food_Choice_input_str = input("Enter your food choice here:\n")
         buy_again_input_str = input("Enter your if you will buy again here:\n")
@@ -59,7 +59,7 @@ def validate_survey(values):
         
     except ValueError as e:
         print(f"Invalid data: {e}, Please try again.")    
-        
+       
     try:  
         if values[1] != ("Male" or "Female"):
             raise ValueError(f'Please provide a valid gender')
