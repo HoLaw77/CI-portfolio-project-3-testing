@@ -22,3 +22,30 @@
 
 <h2>validate_survey()</h2>
 
+<h2>update_worksheet()</h2>
+
+<ul>
+
+<li>After receiving user input and validated the data type is correct, they will be updated to the google worksheet named "sales" </li>
+
+<li> It will append the list when user finish inputting</li>
+
+<li> It will print out a statement saying the worksheet is successfully updated.</li>
+
+<li> As each product also has their own worksheet, they will have a separate update function for updating the list data if the food choice matches the required choice for categorisation.</li>
+
+</ul>
+
+<h2>survey_result()</h2>
+
+<ul>
+
+<li>This function would collect data from the food choice spreadsheet (e.g."salad_sales" for salad).
+
+<li>This function would loop through the data to screen out the number of male and female in the data list and the number of people who say yes to buy again.</li></li>
+
+<li>This function would also print the result out to show the result to the user.</li>
+
+</ul>
+
+<h1>Feature</h1>
