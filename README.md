@@ -1,31 +1,24 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+<h1>Lunch Survey</h1>
 
-Welcome HoLaw77,
+<p>Lunch Survey is a Python survey database system that enable user to input their lunch choice with their ages, gender, lunch choice, and willingness to buy again.</p>
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+<p>The aim of this survey project is to collect and analyse the relationship between the food choice and different age groups, gender. In order to provide sales data for supermarket in maximizing sales in lunch hours.</p>
 
-## Reminders
+<h1>How it works?</h1>
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+<p>The survey can be structured into four main parts: survey_input(), validate_survey(), update_worksheet(), and survey_result().</p>
 
-## Creating the Heroku app
+<h2>survey_input()</h2>
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+<ul>
 
-1. `heroku/python`
-2. `heroku/nodejs`
+<li>Users will be requested to input their age, gender, food choice and willing to buy again (yes or no). </li>
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+<li>The result will be printed out for user reference.</li> 
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+<li>The result will be reorganised into a list format by append method. </li>
 
-Connect your GitHub repository and deploy as normal.
+</ul>
 
-## Constraints
+<h2>validate_survey()</h2>
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
