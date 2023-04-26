@@ -40,7 +40,7 @@ def survey_input():
         lunch_choice.append(Food_Choice_input_str)
         lunch_choice.append(buy_again_input_str)
         print(lunch_choice)
-        #for n in (age_input_str, gender_input_str, Food_Choice_input_str, buy_again_input_str):
+        # for n in (age_input_str, gender_input_str, Food_Choice_input_str, buy_again_input_str):
         #    lunch_choice.append(n)
         print(lunch_choice)
         if validate_survey(lunch_choice):
@@ -104,36 +104,36 @@ def update_Noodles_sales(data):
     import sales data limited to noodles to worksheet
     """
     if data[2] == "Noodle":
-            noodle_sheet = SHEET.worksheet("noodle_sales")
-            noodle_sheet.append_row(data)
-            print("noodle_sales sheet successfully updated")
+        noodle_sheet = SHEET.worksheet("noodle_sales")
+        noodle_sheet.append_row(data)
+        print("noodle_sales sheet successfully updated")
     
 def update_salad_sales(data):
     """
     import sales data limited to salad to worksheet
     """
     if data[2] == "salad":
-            salad_sheet = SHEET.worksheet("salad_sales")
-            salad_sheet.append_row(data)
-            print("salad_sales sheet successfully updated")
+        salad_sheet = SHEET.worksheet("salad_sales")
+        salad_sheet.append_row(data)
+        print("salad_sales sheet successfully updated")
 
 def update_sandwich_sales(data):
     """
     import sales data limited to sandwich to worksheet
     """
     if data[2] == "sandwich":
-            sandwich_sheet = SHEET.worksheet("sandwich_sales")
-            sandwich_sheet.append_row(data)
-            print("sandwich_sales sheet successfully updated")
+        sandwich_sheet = SHEET.worksheet("sandwich_sales")
+        sandwich_sheet.append_row(data)
+        print("sandwich_sales sheet successfully updated")
 
 def update_Fish_and_Chip_sales(data):
     """
     import sales data limited to Fish and Chips to worksheet
     """
     if data[2] == "Fish and Chip":
-            fish_and_chip_sheet = SHEET.worksheet("fish_and_chip_sales")
-            fish_and_chip_sheet.append_row(data)
-            print("fish_and_chip_sales sheet successfully updated")
+        fish_and_chip_sheet = SHEET.worksheet("fish_and_chip_sales")
+        fish_and_chip_sheet.append_row(data)
+        print("fish_and_chip_sales sheet successfully updated")
     
 def survey_result(data):
     """
