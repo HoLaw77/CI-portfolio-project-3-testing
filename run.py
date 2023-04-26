@@ -1,6 +1,13 @@
 import gspread
 from google.oauth2.service_account import Credentials
 from pprint import pprint
+#external code suggested from tutor for importing mean
+#from statistics import mean, stdev
+#my_stats = []
+#for i in range(SHEET.ncols):
+ #   m = mean(c.value for c in sheet.col(i))
+  #  s = stdev(c.value for c in sheet.col(i))
+   # my_stats.append((m,s))
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
