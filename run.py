@@ -143,6 +143,7 @@ def survey_result(data):
     number_salad = sum(num.count("Yes") for num in salad_result)
     male_salad = sum(x.count("Male") for x in salad_result)
     female_salad = sum(y.count("Female") for y in salad_result) 
+    #average_age = salad_result.mean()
     print(f'The number of people who wants to buy salad again is {number_salad}, male:{male_salad}, female:{female_salad}')
     
     fish_and_chip_result = SHEET.worksheet("fish_and_chip_sales").get_all_values()
