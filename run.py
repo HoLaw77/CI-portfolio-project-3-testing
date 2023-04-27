@@ -71,9 +71,10 @@ def validate_survey(values):
     try:                
         if values[2] != ("salad" or "Noodle" or "sandwich" or "Fish and Chip"):
             raise ValueError(f'Please choose from the provided options')
+    
     except ValueError as e:
         print(f"Invalid data: {e}, Please try again.")
-        
+    
     try:
         if values[3] != ("Yes" or "No"):
             raise ValueError(f'Please specify you willingness to buy again')   
@@ -144,9 +145,12 @@ def survey_result(data):
     salad_result = SHEET.worksheet("salad_sales").get_all_values()
     number_salad = sum(num.count("Yes") for num in salad_result)
     male_salad = sum(x.count("Male") for x in salad_result)
-    female_salad = sum(y.count("Female") for y in salad_result) 
-    #average_age = salad_result.mean()
-    print(f'The number of people who wants to buy salad again is {number_salad}, male:{male_salad}, female:{female_salad}')
+    female_salad = sum(y.count("Female") for y in salad_result)
+    my_list = []
+    for n in range(sheet.ncols):
+        m = mean(c.value for c in sheet.col(i))
+    average_age = my_list.append((m))
+    print(f'The number of people who wants to buy salad again is {number_salad}, male:{male_salad}, female:{female_salad}, average_age: {average_age}')
     
     fish_and_chip_result = SHEET.worksheet("fish_and_chip_sales").get_all_values()
     number_fish_and_chip = sum(num.count("Yes") for num in fish_and_chip_result) 
