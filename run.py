@@ -29,7 +29,7 @@ def survey_input():
         gender_input_str = input("Enter your gender here: male or female\n")
         while gender_input_str not in ("male", "female"):
             gender_input_str = input("Error, please enter your gender again:")
-        food_choice_str = input("Enter your food choice: salad/noodle/sandwich/fish and chip\n")
+        food_choice_str = input("Enter your food choice: salad/noodle/sandwichfish and chip\n")
         while food_choice_str not in ("salad", "noodle", "sandwich", "fish and chip"):
             food_choice_str = input("Error, please enter the provided food choice")
         buy_again_input_str = input("Enter your if you will buy again here: yes or no\n")
