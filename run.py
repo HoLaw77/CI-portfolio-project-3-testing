@@ -29,21 +29,21 @@ def survey_input():
         gender_input_str = input("Enter your gender here: male or female\n")
         while gender_input_str not in ("male", "female"):
             gender_input_str = input("Error, please enter your gender again:")
-        food_choice_str = input("Enter your food choice: salad/noodle/sandwichfish and chip\n")
-        while food_choice_str not in ("salad", "noodle", "sandwich", "fish and chip"):
-            food_choice_str = input("Error, please enter the provided food choice")
+        food_choice_input_str = input("Enter your food choice: salad, noodle, sandwich, fish and chip\n")
+        while food_choice_input_str not in ("salad", "noodle", "sandwich", "fish and chip"):
+            food_choice_input_str = input("Error, please enter the provided food choice")
         buy_again_input_str = input("Enter your if you will buy again here: yes or no\n")
         while buy_again_input_str not in ("yes", "no"):
             buy_again_input_str = input("Error, please specify your choice of buy again:\n")
         print(f'you are {age_input_str} years old\n') 
         print(f'your gener is {gender_input_str}\n')
-        print(f'your lunch choice is {food_choice_str}\n') 
+        print(f'your lunch choice is {food_choice_input_str}\n') 
         print(f'you answer {buy_again_input_str} for buying again\n')
         
         lunch_choice = []
         lunch_choice.append(age_input_str)
         lunch_choice.append(gender_input_str)
-        lunch_choice.append(food_choice_str)
+        lunch_choice.append(food_choice_input_str)
         lunch_choice.append(buy_again_input_str)
         print(lunch_choice)
         print(lunch_choice)
@@ -115,7 +115,7 @@ def survey_result(data):
     flat_ages = [int(age) for sublist in ages for age in sublist]
     # Now calculate the mean
     average_age = int(mean(flat_ages))
-    print(f'Buy salad again:{number_salad}, male:{male_salad}, female:{female_salad}, average-age:{average_age}')
+    print(f'Buy salad again: {number_salad}, male:{male_salad}, female:{female_salad}, average-age: {average_age}')
     
     fish_and_chip_result = SHEET.worksheet("fish_and_chip_sales").get_all_values()
     number_fish_and_chip = sum(num.count("Yes") for num in fish_and_chip_result) 
@@ -147,7 +147,7 @@ def survey_result(data):
     # Flatten the list and convert strings to integers
     flat_ages = [int(age) for sublist in ages for age in sublist]
     # Now calculate the mean
-    average_age = int(mean(flat_ages))
+    average_age = int(mean(flat_ages)) 
     print(f'Buy noodle again{number_noodle} male:{male_noodle}, female:{female_noodle}, average-age:{average_age}')
 
 
