@@ -53,6 +53,14 @@
 <h1>Feature</h1>
 
 <ul>
-<li></li>
+<li>Printing out the users' choice after they have entered</li>
+<li>Break the function if users' answers do not match the required options</li>
+<li>Print out average age, male and female, and number of people buy again with each food choice.</li>
+</ul>
 
+<h1>Testing</h1>
+
+<ul>
+<li></li>
+<li></li>
 </ul>
