@@ -1,6 +1,6 @@
+from statistics import mean
 import gspread
 from google.oauth2.service_account import Credentials
-from statistics import mean
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -35,10 +35,10 @@ def survey_input():
         buy_again_input_str = input("Enter your if you will buy again here: yes or no\n")
         while buy_again_input_str not in ("yes", "no"):
             buy_again_input_str = input("Error, please specify your choice of buy again:\n")
-        print(f' you are {age_input_str} years old\n') 
-        print(f' your gener is {gender_input_str}\n')
-        print(f' your lunch choice is {food_choice_input_str}\n') 
-        print(f' you answer {buy_again_input_str} for buying again\n')
+        print(f'you are {age_input_str} years old\n') 
+        print(f'your gener is {gender_input_str}\n')
+        print(f'your lunch choice is {food_choice_input_str}\n') 
+        print(f'you answer {buy_again_input_str} for buying again\n')
         
         lunch_choice = []
         lunch_choice.append(age_input_str)
@@ -62,7 +62,7 @@ def update_worksheet(data):
     print("Worksheet updated successfully.\n")
 
 
-def update_Noodles_sales(data):
+def update_noodles_sales(data):
     """
     import sales data limited to noodles to worksheet
     """
@@ -92,7 +92,7 @@ def update_sandwich_sales(data):
         print("sandwich_sales sheet successfully updated")
 
 
-def update_Fish_and_Chip_sales(data):
+def update_fish_and_chip_sales(data):
     """
     import sales data limited to Fish and Chips to worksheet
     """
@@ -147,7 +147,7 @@ def survey_result(data):
     # Flatten the list and convert strings to integers
     flat_ages = [int(age) for sublist in ages for age in sublist]
     # Now calculate the mean
-    average_age = int(mean(flat_ages)) 
+    average_age = int(mean(flat_ages))
     print(f'Buy noodle again{number_noodle} male:{male_noodle}, female:{female_noodle}, average-age:{average_age}')
 
 
@@ -156,9 +156,9 @@ def main():
     data = survey_input()
     update_worksheet(data)
     update_salad_sales(data)
-    update_Noodles_sales(data)
+    update_noodles_sales(data)
     update_sandwich_sales(data)
-    update_Fish_and_Chip_sales(data)
+    update_fish_and_chip_sales(data)
     survey_result(data)
     survey_end = True
     while survey_end:

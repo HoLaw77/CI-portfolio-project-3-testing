@@ -12,15 +12,15 @@
 
 <ul>
 
-<li>Users will be requested to input their age, gender, food choice and willing to buy again (yes or no). </li>
+<li>Users will be requested to input their age, gender, food choice (sandwich, fish and chip, noodle and salad) and willing to buy again (yes or no). </li>
+
+<li>If user input answer that does not match the required options, it will print out Error message and request user to reenter.</li>
 
 <li>The result will be printed out for user reference.</li> 
 
 <li>The result will be reorganised into a list format by append method. </li>
 
 </ul>
-
-<h2>validate_survey()</h2>
 
 <h2>update_worksheet()</h2>
 
@@ -42,10 +42,17 @@
 
 <li>This function would collect data from the food choice spreadsheet (e.g."salad_sales" for salad).
 
-<li>This function would loop through the data to screen out the number of male and female in the data list and the number of people who say yes to buy again.</li></li>
+<li>This function would loop through the data to screen out the number of male and female in the data list and the number of people who say yes to buy again.</li>
+
+<li>This function will also get the age value from the google spreadsheet and canculate it to produce the mean of users' age within the food choice spreadsheet.</li>
 
 <li>This function would also print the result out to show the result to the user.</li>
 
 </ul>
 
 <h1>Feature</h1>
+
+<ul>
+<li></li>
+
+</ul>
