@@ -1,6 +1,5 @@
 import gspread
 from google.oauth2.service_account import Credentials
-from pprint import pprint
 #external code suggested from tutor for importing mean
 from statistics import mean
 SCOPE = [
@@ -31,21 +30,21 @@ def survey_input():
         gender_input_str = input("Enter your gender here: male or female\n")
         while gender_input_str not in ("male", "female"):
             gender_input_str = input("Error, please enter your gender again:")
-        Food_Choice_input_str = input("Enter your food choice here: salad or noodle or sandwich or fish and chip\n")
-        while Food_Choice_input_str not in ("salad", "noodle", "sandwich", "fish and chip"):
-            Food_Choice_input_str = input("Error, please enter the provided food choice")
+        food_choice_input_str = input("Enter your food choice here: salad or noodle or sandwich or fish and chip\n")
+        while food_choice_input_str not in ("salad", "noodle", "sandwich", "fish and chip"):
+            food_choice_input_str = input("Error, please enter the provided food choice")
         buy_again_input_str = input("Enter your if you will buy again here: yes or no\n")
         while buy_again_input_str not in ("yes", "no"):
             buy_again_input_str = input("Error, please specify your choice of buy again:\n")
         print(f' you are {age_input_str} years old\n') 
         print(f' your gener is {gender_input_str}\n')
-        print(f' your lunch choice is {Food_Choice_input_str}\n') 
+        print(f' your lunch choice is {food_choice_input_str}\n') 
         print(f' you answer {buy_again_input_str} for buying again\n')
         
         lunch_choice = []
         lunch_choice.append(age_input_str)
         lunch_choice.append(gender_input_str)
-        lunch_choice.append(Food_Choice_input_str)
+        lunch_choice.append(food_choice_input_str)
         lunch_choice.append(buy_again_input_str)
         print(lunch_choice)
         # for n in (age_input_str, gender_input_str, Food_Choice_input_str, buy_again_input_str):
@@ -121,11 +120,8 @@ def survey_result(data):
     number_salad = sum(num.count("Yes") for num in salad_result)
     male_salad = sum(x.count("Male") for x in salad_result)
     female_salad = sum(y.count("Female") for y in salad_result)
-    my_list = []
-    for n in range(sheet.ncols):
-        m = mean(c.value for c in sheet.col(i))
-    average_age = my_list.append((m))
-    print(f'The number of people who wants to buy salad again is {number_salad}, male:{male_salad}, female:{female_salad}, average_age: {average_age}')
+    average_age = mean(SHEET.worksheet("salad_sales").get("A2:A99"))
+    print(f'The number of people who wants to buy salad again is {number_salad}, male:{male_salad}, female:{female_salad}')
     
     fish_and_chip_result = SHEET.worksheet("fish_and_chip_sales").get_all_values()
     number_fish_and_chip = sum(num.count("Yes") for num in fish_and_chip_result) 
@@ -151,11 +147,19 @@ def main():
     data = survey_input()
     lunch_survey_data = [i for i in "lunch_choice"]
     update_worksheet(data)
-    Get_popular_product(data)
+    get_popular_product(data)
     update_salad_sales(data)
     update_Noodles_sales(data)
     update_sandwich_sales(data)
     update_Fish_and_Chip_sales(data)
     survey_result(data)
+    survey_end = True
+    while survey_end:
+        ask = input("Do you want to resubmit? yes or no \n")
+        if ask == "yes":
+            main()
+        if ask == "no":
+            survey_end = False
+            print("Thanks for joining, have a good day.")
 print("Welcome to Lunch Survery Data Automation\n")
 main()
