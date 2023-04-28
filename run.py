@@ -64,18 +64,6 @@ def update_worksheet(data):
     print("updating worksheet")
     print("Worksheet updated successfully.\n")
 
-def get_popular_product(data):
-    """
-    Get popular product from the buy_again_input and compare with food_choice_input
-    """
-    print('Sales survey result processing...')
-    sales = SHEET.worksheet("sales").get_all_values()
-    salad_sales = SHEET.worksheet("salad_sales").get_all_values()
-    fish_and_chip_sales = SHEET.worksheet("fish_and_chip_sales").get_all_values()
-    noodle_sales = SHEET.worksheet("noodle_sales").get_all_values()
-    sandwich_sales = SHEET.worksheet("sandwich_sales").get_all_values()
-    
-
 def update_Noodles_sales(data):
     """
     import sales data limited to noodles to worksheet
@@ -120,34 +108,51 @@ def survey_result(data):
     number_salad = sum(num.count("Yes") for num in salad_result)
     male_salad = sum(x.count("Male") for x in salad_result)
     female_salad = sum(y.count("Female") for y in salad_result)
-    average_age = mean(SHEET.worksheet("salad_sales").get("A2:A99"))
-    print(f'The number of people who wants to buy salad again is {number_salad}, male:{male_salad}, female:{female_salad}')
+    ages = SHEET.worksheet("salad_sales").get("A2:A99")
+    # Flatten the list and convert strings to integers
+    flat_ages = [int(age) for sublist in ages for age in sublist]
+    # Now calculate the mean
+    average_age = int(mean(flat_ages))
+    print(f'The number of people who wants to buy salad again is {number_salad}, male:{male_salad}, female:{female_salad}, average-age: {average_age}')
     
     fish_and_chip_result = SHEET.worksheet("fish_and_chip_sales").get_all_values()
     number_fish_and_chip = sum(num.count("Yes") for num in fish_and_chip_result) 
     male_fish_and_chip = sum(x.count("Male") for x in fish_and_chip_result)
-    female_fish_and_chip = sum(y.count("Female") for y in fish_and_chip_result) 
-    print(f'The number of people who wants to buy fish and chip again is {number_fish_and_chip}, male:{male_fish_and_chip}, female:{female_fish_and_chip}')
+    female_fish_and_chip = sum(y.count("Female") for y in fish_and_chip_result)
+    ages = SHEET.worksheet("fish_and_chip_sales").get("A2:A99")
+    # Flatten the list and convert strings to integers
+    flat_ages = [int(age) for sublist in ages for age in sublist]
+    # Now calculate the mean
+    average_age = int(mean(flat_ages)) 
+    print(f'The number of people who wants to buy fish and chip again is {number_fish_and_chip}, male:{male_fish_and_chip}, female:{female_fish_and_chip}, average_age: {average_age}')
 
     sandwich_result = SHEET.worksheet("sandwich_sales").get_all_values()
     number_sandwich = sum(num.count("Yes") for num in sandwich_result)
     male_sandwich = sum(x.count("Male") for x in sandwich_result)
     female_sandwich = sum(y.count("Female") for y in sandwich_result) 
-    print(f'The number of people who wants to buy sandwich again is {number_sandwich}, male:{male_sandwich}, female:{female_sandwich}')
+    ages = SHEET.worksheet("sandwich_sales").get("A2:A99")
+    # Flatten the list and convert strings to integers
+    flat_ages = [int(age) for sublist in ages for age in sublist]
+    # Now calculate the mean
+    average_age = int(mean(flat_ages)) 
+    print(f'The number of people who wants to buy sandwich again is {number_sandwich}, male:{male_sandwich}, female:{female_sandwich}, age: {average_age}')
 
     noodle_result = SHEET.worksheet("noodle_sales").get_all_values()
     number_noodle = sum(num.count("Yes") for num in noodle_result)
     male_noodle = sum(x.count("Male") for x in noodle_result)
     female_noodle = sum(y.count("Female") for y in noodle_result) 
-    print(f'The number of people who wants to buy noodle again is {number_noodle}, male:{male_noodle}, female:{female_noodle}')
+    ages = SHEET.worksheet("noodle_sales").get("A2:A99")
+    # Flatten the list and convert strings to integers
+    flat_ages = [int(age) for sublist in ages for age in sublist]
+    # Now calculate the mean
+    average_age = int(mean(flat_ages)) 
+    print(f'The number of people who wants to buy noodle again is {number_noodle}, male:{male_noodle}, female:{female_noodle}, average-age:{average_age}')
 
 
 def main():
     """Run all programme function"""
     data = survey_input()
-    lunch_survey_data = [i for i in "lunch_choice"]
     update_worksheet(data)
-    get_popular_product(data)
     update_salad_sales(data)
     update_Noodles_sales(data)
     update_sandwich_sales(data)
