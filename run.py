@@ -150,7 +150,6 @@ def main():
     """Run all programme function"""
     data = survey_input()
     lunch_survey_data = [i for i in "lunch_choice"]
-    validate_survey(data)
     update_worksheet(data)
     Get_popular_product(data)
     update_salad_sales(data)
