@@ -1,3 +1,6 @@
+"""
+Install statistics, gspread and google.oauth
+"""
 from statistics import mean
 import gspread
 from google.oauth2.service_account import Credentials
