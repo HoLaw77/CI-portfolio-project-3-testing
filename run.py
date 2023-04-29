@@ -110,7 +110,7 @@ def update_fish_and_chip_sales(data):
         print("fish_and_chip_sales sheet successfully updated")
 
 
-def survey_result(data):
+def survey_result():
     """
     Count the number of each food choice and print the result in console
     """
@@ -124,9 +124,9 @@ def survey_result(data):
     # Now calculate the mean
     average_age = int(mean(num_ages))
     print(
-        f'Buy salad again: {number_salad}'
-        f'male:{male_salad}'
-        f'female:{female_salad}'
+        f'Buy salad again: {number_salad}, '
+        f'male: {male_salad}, '
+        f'female: {female_salad}, '
         f'average-age: {average_age}')
 
     fish_and_chip_result = SHEET.worksheet(
@@ -141,9 +141,9 @@ def survey_result(data):
     # Now calculate the mean
     average_age = int(mean(flat_ages))
     print(
-        f'Buy fish and chip again:{number_fish_and_chip}'
-        f'male:{male_fish_and_chip}'
-        f'female:{female_fish_and_chip}'
+        f'Buy fish and chip again: {number_fish_and_chip}, '
+        f'male: {male_fish_and_chip}, '
+        f'female: {female_fish_and_chip}, '
         f'average_age: {average_age}')
 
     sandwich_result = SHEET.worksheet("sandwich_sales").get_all_values()
@@ -156,9 +156,9 @@ def survey_result(data):
     # Now calculate the mean
     average_age = int(mean(flat_ages))
     print(
-        f'Buy sandwich again:{number_sandwich}'
-        f'male:{male_sandwich}'
-        f'female:{female_sandwich}'
+        f'Buy sandwich again: {number_sandwich}, '
+        f'male: {male_sandwich}, '
+        f'female: {female_sandwich}, '
         f'avearge-age: {average_age}')
 
     noodle_result = SHEET.worksheet("noodle_sales").get_all_values()
@@ -171,10 +171,10 @@ def survey_result(data):
     # Now calculate the mean
     average_age = int(mean(flat_ages))
     print(
-        f'Buy noodle again{number_noodle}'
-        f'male:{male_noodle}'
-        f'female:{female_noodle}'
-        f'average-age:{average_age}')
+        f'Buy noodle again: {number_noodle}, '
+        f'male: {male_noodle}, '
+        f'female: {female_noodle}, '
+        f'average-age: {average_age}')
 
 
 def main():
@@ -185,7 +185,7 @@ def main():
     update_noodles_sales(data)
     update_sandwich_sales(data)
     update_fish_and_chip_sales(data)
-    survey_result(data)
+    survey_result()
     survey_end = True
     while survey_end:
         ask = input("Do you want to resubmit? yes or no \n")
