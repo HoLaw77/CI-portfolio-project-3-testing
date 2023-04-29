@@ -5,7 +5,7 @@ SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
     "https://www.googleapis.com/auth/drive"
-    ]
+]
 
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
@@ -29,17 +29,22 @@ def survey_input():
         gender_input_str = input("Enter your gender here: male or female\n")
         while gender_input_str not in ("male", "female"):
             gender_input_str = input("Error, please enter your gender again:")
-        food_choice_input_str = input("Enter your food choice: salad, noodle, sandwich, fish and chip\n")
-        while food_choice_input_str not in ("salad", "noodle", "sandwich", "fish and chip"):
-            food_choice_input_str = input("Error, please enter the provided food choice")
-        buy_again_input_str = input("Enter your if you will buy again here: yes or no\n")
+        food_choice_input_str = input(
+            "Enter your food choice: salad, noodle, sandwich, fish and chip\n")
+        while food_choice_input_str not in (
+                "salad", "noodle", "sandwich", "fish and chip"):
+            food_choice_input_str = input(
+                "Error, please enter the provided food choice")
+        buy_again_input_str = input(
+            "Enter your if you will buy again here: yes or no\n")
         while buy_again_input_str not in ("yes", "no"):
-            buy_again_input_str = input("Error, please specify your choice of buy again:\n")
-        print(f'you are {age_input_str} years old\n') 
+            buy_again_input_str = input(
+                "Error, please specify your choice of buy again:\n")
+        print(f'you are {age_input_str} years old\n')
         print(f'your gener is {gender_input_str}\n')
-        print(f'your lunch choice is {food_choice_input_str}\n') 
+        print(f'your lunch choice is {food_choice_input_str}\n')
         print(f'you answer {buy_again_input_str} for buying again\n')
-        
+
         lunch_choice = []
         lunch_choice.append(age_input_str)
         lunch_choice.append(gender_input_str)
@@ -70,7 +75,7 @@ def update_noodles_sales(data):
         noodle_sheet = SHEET.worksheet("noodle_sales")
         noodle_sheet.append_row(data)
         print("noodle_sales sheet successfully updated")
-    
+
 
 def update_salad_sales(data):
     """
@@ -115,40 +120,46 @@ def survey_result(data):
     flat_ages = [int(age) for sublist in ages for age in sublist]
     # Now calculate the mean
     average_age = int(mean(flat_ages))
-    print(f'Buy salad again: {number_salad}, male:{male_salad}, female:{female_salad}, average-age: {average_age}')
-    
-    fish_and_chip_result = SHEET.worksheet("fish_and_chip_sales").get_all_values()
-    number_fish_and_chip = sum(num.count("Yes") for num in fish_and_chip_result) 
+    print(
+        f'Buy salad again: {number_salad}, male:{male_salad}, female:{female_salad}, average-age: {average_age}')
+
+    fish_and_chip_result = SHEET.worksheet(
+        "fish_and_chip_sales").get_all_values()
+    number_fish_and_chip = sum(num.count("Yes")
+                               for num in fish_and_chip_result)
     male_fish_and_chip = sum(x.count("Male") for x in fish_and_chip_result)
     female_fish_and_chip = sum(y.count("Female") for y in fish_and_chip_result)
     ages = SHEET.worksheet("fish_and_chip_sales").get("A2:A99")
     # Flatten the list and convert strings to integers
     flat_ages = [int(age) for sublist in ages for age in sublist]
     # Now calculate the mean
-    average_age = int(mean(flat_ages)) 
-    print(f'Buy fish and chip again:{number_fish_and_chip}, male:{male_fish_and_chip}, female:{female_fish_and_chip}, average_age: {average_age}')
+    average_age = int(mean(flat_ages))
+    print(
+        f'Buy fish and chip again:{number_fish_and_chip}, male:{male_fish_and_chip}, female:{female_fish_and_chip}, average_age: {average_age}')
 
     sandwich_result = SHEET.worksheet("sandwich_sales").get_all_values()
     number_sandwich = sum(num.count("Yes") for num in sandwich_result)
     male_sandwich = sum(x.count("Male") for x in sandwich_result)
-    female_sandwich = sum(y.count("Female") for y in sandwich_result) 
+    female_sandwich = sum(y.count("Female") for y in sandwich_result)
     ages = SHEET.worksheet("sandwich_sales").get("A2:A99")
     # Flatten the list and convert strings to integers
     flat_ages = [int(age) for sublist in ages for age in sublist]
     # Now calculate the mean
-    average_age = int(mean(flat_ages)) 
-    print(f'Buy sandwich again:{number_sandwich}, male:{male_sandwich}, female:{female_sandwich}, age: {average_age}')
+    average_age = int(mean(flat_ages))
+    print(
+        f'Buy sandwich again:{number_sandwich}, male:{male_sandwich}, female:{female_sandwich}, age: {average_age}')
 
     noodle_result = SHEET.worksheet("noodle_sales").get_all_values()
     number_noodle = sum(num.count("Yes") for num in noodle_result)
     male_noodle = sum(x.count("Male") for x in noodle_result)
-    female_noodle = sum(y.count("Female") for y in noodle_result) 
+    female_noodle = sum(y.count("Female") for y in noodle_result)
     ages = SHEET.worksheet("noodle_sales").get("A2:A99")
     # Flatten the list and convert strings to integers
     flat_ages = [int(age) for sublist in ages for age in sublist]
     # Now calculate the mean
-    average_age = int(mean(flat_ages)) 
-    print(f'Buy noodle again{number_noodle} male:{male_noodle}, female:{female_noodle}, average-age:{average_age}')
+    average_age = int(mean(flat_ages))
+    print(
+        f'Buy noodle again{number_noodle} male:{male_noodle}, female:{female_noodle}, average-age:{average_age}')
 
 
 def main():
