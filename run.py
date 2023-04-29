@@ -117,9 +117,9 @@ def survey_result(data):
     female_salad = sum(y.count("Female") for y in salad_result)
     ages = SHEET.worksheet("salad_sales").get("A2:A99")
     # Flatten the list and convert strings to integers
-    flat_ages = [int(age) for sublist in ages for age in sublist]
+    num_ages = [int(age) for sublist in ages for age in sublist]
     # Now calculate the mean
-    average_age = int(mean(flat_ages))
+    average_age = int(mean(num_ages))
     print(
         f'Buy salad again: {number_salad}, male:{male_salad}, female:{female_salad}, average-age: {average_age}')
 
