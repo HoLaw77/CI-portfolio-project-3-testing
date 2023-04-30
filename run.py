@@ -46,7 +46,7 @@ def survey_input():
             buy_again_input_str = input(
                 "Error, please specify your choice of buy again:\n")
         print(f'you are {age_input_str} years old\n')
-        print(f'your gener is {gender_input_str}\n')
+        print(f'your gender is {gender_input_str}\n')
         print(f'your lunch choice is {food_choice_input_str}\n')
         print(f'you answer {buy_again_input_str} for buying again\n')
 
@@ -158,7 +158,7 @@ def survey_result():
         f'Buy sandwich again: {number_sandwich}, '
         f'male: {male_sandwich}, '
         f'female: {female_sandwich}, '
-        f'avearge-age: {average_age}')
+        f'average-age: {average_age}')
 
     noodle_result = SHEET.worksheet("noodle_sales").get_all_values()
     number_noodle = sum(num.count("Yes") for num in noodle_result)
@@ -194,5 +194,5 @@ def main():
             print("Thanks for joining, have a good day.")
 
 
-print("Welcome to Lunch Survery Data Automation\n")
+print("Welcome to Lunch Survey Data Automation\n")
 main()
