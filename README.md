@@ -1,15 +1,16 @@
 <h1>Lunch Survey</h1>
 
-<img src="documentation/responsiveness-CI-project-3.png", alt="responsiveness">
+<img src="assets/documentation/responsiveness-CI-project-3.png">
+
 <p>Lunch Survey is a Python survey database system that enable user to input their lunch choice with their ages, gender, lunch choice, and willingness to buy again.</p>
 
 <p>The aim of this survey project is to collect and analyse the relationship between the food choice and different age groups, gender. In order to provide sales data for supermarket in maximizing sales in lunch hours.</p>
 
 <h1>How it works?</h1>
 
-<p>The survey can be structured into four main parts: survey_input(), validate_survey(), update_worksheet(), and survey_result().</p>
+<p>The survey can be structured into four main parts: survey input, validate survey, update worksheet, and survey result.</p>
 
-<h2>survey_input()</h2>
+<h2>Survey Input</h2>
 
 <ul>
 
