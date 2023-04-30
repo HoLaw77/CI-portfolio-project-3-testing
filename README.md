@@ -55,6 +55,10 @@
 
 </ul>
 
+<h1>Flowchart</h1>
+
+![flowchart](assets/documentation/Flowchart.png)
+
 <h1>Feature</h1>
 
 <ul>
