@@ -2,13 +2,16 @@
 
 ![responsiveness](assets/documentation/responsiveness-CI-project-3.png)
 
-<p>Lunch Survey is a Python survey database system that enable user to input their lunch choice with their ages, gender, lunch choice, and willingness to buy again.</p>
+<p>
+
+[Lunch Survey](https://lunch-survey.herokuapp.com/)
+ is a Python survey database system that enable user to input their lunch choice with their ages, gender, lunch choice, and willingness to buy again.</p>
 
 <p>The aim of this survey project is to collect and analyse the relationship between the food choice and different age groups, gender. In order to provide sales data for supermarket in maximizing sales in lunch hours.</p>
 
 <h1>How it works?</h1>
 
-<p>The survey can be structured into three main parts: survey input, update worksheet, and survey result.</p>
+<p>The survey can be structured into three main parts: Survey Input, Update Worksheet, and Survey Result.</p>
 
 <h2>Survey Input</h2>
 
