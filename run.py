@@ -117,9 +117,9 @@ def survey_result():
     male_salad = sum(x.count("Male") for x in salad_result)
     female_salad = sum(y.count("Female") for y in salad_result)
     ages = SHEET.worksheet("salad_sales").get("A2:A99")
-    # Flatten the list and convert strings to integers
+    # Flatten the list and convert strings to integers, advised by Tutor of CI
     num_ages = [int(age) for sublist in ages for age in sublist]
-    # Now calculate the mean
+    # Now calculate the mean, advised by Tutor of CI
     average_age = int(mean(num_ages))
     print(
         f'Buy salad again: {number_salad}, '
@@ -134,10 +134,8 @@ def survey_result():
     male_fish_and_chip = sum(x.count("Male") for x in fish_and_chip_result)
     female_fish_and_chip = sum(y.count("Female") for y in fish_and_chip_result)
     ages = SHEET.worksheet("fish_and_chip_sales").get("A2:A99")
-    # Flatten the list and convert strings to integers
-    flat_ages = [int(age) for sublist in ages for age in sublist]
-    # Now calculate the mean
-    average_age = int(mean(flat_ages))
+    num_ages = [int(age) for sublist in ages for age in sublist]
+    average_age = int(mean(num_ages))
     print(
         f'Buy fish and chip again: {number_fish_and_chip}, '
         f'male: {male_fish_and_chip}, '
@@ -149,10 +147,8 @@ def survey_result():
     male_sandwich = sum(x.count("Male") for x in sandwich_result)
     female_sandwich = sum(y.count("Female") for y in sandwich_result)
     ages = SHEET.worksheet("sandwich_sales").get("A2:A99")
-    # Flatten the list and convert strings to integers
-    flat_ages = [int(age) for sublist in ages for age in sublist]
-    # Now calculate the mean
-    average_age = int(mean(flat_ages))
+    num_ages = [int(age) for sublist in ages for age in sublist]
+    average_age = int(mean(num_ages))
     print(
         f'Buy sandwich again: {number_sandwich}, '
         f'male: {male_sandwich}, '
@@ -164,10 +160,8 @@ def survey_result():
     male_noodle = sum(x.count("Male") for x in noodle_result)
     female_noodle = sum(y.count("Female") for y in noodle_result)
     ages = SHEET.worksheet("noodle_sales").get("A2:A99")
-    # Flatten the list and convert strings to integers
-    flat_ages = [int(age) for sublist in ages for age in sublist]
-    # Now calculate the mean
-    average_age = int(mean(flat_ages))
+    num_ages = [int(age) for sublist in ages for age in sublist]
+    average_age = int(mean(num_ages))
     print(
         f'Buy noodle again: {number_noodle}, '
         f'male: {male_noodle}, '
