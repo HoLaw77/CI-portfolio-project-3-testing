@@ -60,7 +60,7 @@
 ![print user input](assets/documentation/print-user-input.png)
 <li>Break the function if users' answers do not match the required options</li>
 
-![print user input](assets/documentation/break-the-function-invalid-data.png)
+![break when invalid](assets/documentation/break-the-function-invalid-data.png)
 <li>Print out average age, male and female, and number of people buy again with each food choice.</li>
 </ul>
 
