@@ -50,9 +50,9 @@ def survey_input():
 
         lunch_choice = []
         lunch_choice.append(age_input_str)
-        lunch_choice.append(gender_input_str)
-        lunch_choice.append(food_choice_input_str)
-        lunch_choice.append(buy_again_input_str)
+        lunch_choice.append(gender_input_str.lower())
+        lunch_choice.append(food_choice_input_str.lower())
+        lunch_choice.append(buy_again_input_str.lower())
         break
 
     return lunch_choice
@@ -72,7 +72,7 @@ def update_noodles_sales(data):
     """
     import sales data limited to noodles to worksheet
     """
-    if data[2] == "Noodle":
+    if data[2].lower() == "noodle":
         noodle_sheet = SHEET.worksheet("noodle_sales")
         noodle_sheet.append_row(data)
         print("noodle_sales sheet successfully updated")
@@ -82,7 +82,7 @@ def update_salad_sales(data):
     """
     import sales data limited to salad to worksheet
     """
-    if data[2] == "salad":
+    if data[2].lower() == "salad":
         salad_sheet = SHEET.worksheet("salad_sales")
         salad_sheet.append_row(data)
         print("salad_sales sheet successfully updated")
@@ -92,7 +92,7 @@ def update_sandwich_sales(data):
     """
     import sales data limited to sandwich to worksheet
     """
-    if data[2] == "sandwich":
+    if data[2].lower() == "sandwich":
         sandwich_sheet = SHEET.worksheet("sandwich_sales")
         sandwich_sheet.append_row(data)
         print("sandwich_sales sheet successfully updated")
@@ -102,7 +102,7 @@ def update_fish_and_chip_sales(data):
     """
     import sales data limited to Fish and Chips to worksheet
     """
-    if data[2] == "Fish and Chip":
+    if data[2].lower() == "fish and chip":
         fish_and_chip_sheet = SHEET.worksheet("fish_and_chip_sales")
         fish_and_chip_sheet.append_row(data)
         print("fish_and_chip_sales sheet successfully updated")
