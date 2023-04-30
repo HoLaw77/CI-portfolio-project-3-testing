@@ -67,6 +67,10 @@
 <li>Print out average age, male and female, and number of people buy again with each food choice.</li>
 
 ![print statistics](assets/documentation/print-statistics.png)
+
+<li>Ask if user wants to resubmit, if no, the programme ends with a Thank you statement printed</li>
+
+![end programme](assets/documentation/end-programme.png)
 </ul>
 
 <h1>Testing</h1>
