@@ -144,7 +144,7 @@ def survey_result():
         f'Buy fish and chip again: {number_fish_and_chip}, '
         f'male: {male_fish_and_chip}, '
         f'female: {female_fish_and_chip}, '
-        f'average_age: {average_age}')
+        f'average-age: {average_age}')
 
     sandwich_result = SHEET.worksheet("sandwich_sales").get_all_values()
     number_sandwich = sum(num.count("Yes") for num in sandwich_result)
