@@ -167,7 +167,7 @@ def survey_result():
     ages = SHEET.worksheet("noodle_sales").get("A2:A99")
     num_ages = [int(age) for sublist in ages for age in sublist]
     average_age = int(mean(num_ages))
-     # Print the satistics user who choose noodle
+    # Print the satistics user who choose noodle
     print(
         f'Buy noodle again: {number_noodle}, '
         f'male: {male_noodle}, '
