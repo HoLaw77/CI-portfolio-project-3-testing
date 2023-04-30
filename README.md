@@ -5,9 +5,9 @@
 <p>
 
 [Lunch Survey](https://lunch-survey.herokuapp.com/)
- is a Python survey database system that enable user to input their lunch choice with their ages, gender, lunch choice, and willingness to buy again.</p>
+ is a Python survey database system that enables user to input their lunch choices with their ages, gender, lunch choice, and willingness to buy again.</p>
 
-<p>The aim of this survey project is to collect and analyse the relationship between the food choice and different age groups, gender. In order to provide sales data for supermarket in maximizing sales in lunch hours.</p>
+<p>The aim of this survey project is to collect and analyse the relationship between food choice and different age groups, gender. In order to provide sales data for supermarket in maximizing sales in lunch hours.</p>
 
 <h1>How it works?</h1>
 
@@ -19,7 +19,7 @@
 
 <li>Users will be requested to input their age, gender, food choice (sandwich, fish and chip, noodle and salad) and willing to buy again (yes or no). </li>
 
-<li>If user input answer that does not match the required options, it will print out Error message and request user to reenter.</li>
+<li>If user input answer does not match the required options, it will print out Error message and request user to re-enter.</li>
 
 <li>The result will be printed out for user reference.</li> 
 
@@ -51,11 +51,13 @@
 
 <li>This function will also get the age value from the google spreadsheet and canculate it to produce the mean of users' age within the food choice spreadsheet.</li>
 
-<li>This function would also print the result out to show the result to the user.</li>
+<li>This function would also print the result out to show the result to users.</li>
 
 </ul>
 
 <h1>Flowchart</h1>
+
+<h2>You can see the logic of the program from this flowchart.</h2>
 
 ![flowchart](assets/documentation/Flowchart.png)
 
