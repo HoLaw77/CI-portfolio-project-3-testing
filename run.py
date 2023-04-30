@@ -15,7 +15,7 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 try:
     SHEET = GSPREAD_CLIENT.open('lunch_survey')
-except:
+except BaseException:
     SHEET = GSPREAD_CLIENT.create('lunch_survey')
 
 
