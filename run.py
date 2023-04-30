@@ -41,7 +41,7 @@ def survey_input():
             food_choice_input_str = input(
                 "Error, please enter the provided food choice\n")
         buy_again_input_str = input(
-            "Enter your if you will buy again here: yes or no\n")
+            "Enter if you will buy again here: yes or no\n")
         while buy_again_input_str.lower() not in ("yes", "no"):
             buy_again_input_str = input(
                 "Error, please specify your choice of buy again:\n")
