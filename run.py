@@ -25,7 +25,6 @@ def survey_input():
         print('We need your age, gender, food choice and will you buy later\n')
         print('Food choice: fish and chip/salad/sandwich/noodle\n')
 
-
         age_input_str = input("Enter your age here:\n")
         while age_input_str.isnumeric() is not True:
             age_input_str = input("Error, please provide a number for age:\n")
