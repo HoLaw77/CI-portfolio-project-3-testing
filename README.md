@@ -118,6 +118,11 @@
 <h1>Credits</h1>
 
 <ul>
+<li>Code Institue template for github </li>
+<li>Basic format has been inspired by 
+
+[Code Institue Love Sandwich project](https://github.com/Code-Institute-Solutions/love-sandwiches-p5-sourcecode/tree/master/05-deployment/01-deployment-part-1)
+</li>
 <li>Code Institue for Deploy terminal</li>
 <li>Mentor Aleksei Konovalov for discussing project outline and improvement</li>
 <li>A big thanks to Code Institue Tutors who discuss and suggest solutions esp in calculating average_age part </li>
