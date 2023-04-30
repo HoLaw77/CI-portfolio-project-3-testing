@@ -23,24 +23,24 @@ def survey_input():
     while True:
         print('It is an anonymous survey on lunch choice.\n')
         print('We need your age, gender, food choice and will you buy later\n')
-        print('Food choice: Fish and Chip/Salad/Sandwich/Noodle\n')
-        print('buy again: yes/no\n')
+        print('Food choice: fish and chip/salad/sandwich/noodle\n')
+        
 
         age_input_str = input("Enter your age here:\n")
         while age_input_str.isnumeric() is not True:
-            age_input_str = input("Error, please provide a number for age:")
+            age_input_str = input("Error, please provide a number for age:\n")
         gender_input_str = input("Enter your gender here: male or female\n")
-        while gender_input_str not in ("male", "female"):
-            gender_input_str = input("Error, please enter your gender again:")
+        while gender_input_str.lower() not in ("male", "female"):
+            gender_input_str = input("Error, please enter your gender again:\n")
         food_choice_input_str = input(
             "Enter your food choice: salad, noodle, sandwich, fish and chip\n")
-        while food_choice_input_str not in (
+        while food_choice_input_str.lower() not in (
                 "salad", "noodle", "sandwich", "fish and chip"):
             food_choice_input_str = input(
-                "Error, please enter the provided food choice")
+                "Error, please enter the provided food choice\n")
         buy_again_input_str = input(
             "Enter your if you will buy again here: yes or no\n")
-        while buy_again_input_str not in ("yes", "no"):
+        while buy_again_input_str.lower() not in ("yes", "no"):
             buy_again_input_str = input(
                 "Error, please specify your choice of buy again:\n")
         print(f'you are {age_input_str} years old\n')
@@ -53,8 +53,6 @@ def survey_input():
         lunch_choice.append(gender_input_str)
         lunch_choice.append(food_choice_input_str)
         lunch_choice.append(buy_again_input_str)
-        print(lunch_choice)
-        print(lunch_choice)
         break
 
     return lunch_choice
