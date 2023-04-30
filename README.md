@@ -62,6 +62,8 @@
 
 ![break when invalid](assets/documentation/break-the-function-invalid-data.png)
 <li>Print out average age, male and female, and number of people buy again with each food choice.</li>
+
+![print statistics](assets/documentation/print-statistics.png)
 </ul>
 
 <h1>Testing</h1>
