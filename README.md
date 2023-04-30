@@ -66,3 +66,40 @@
 <li>Use a while loop to ask user to enter again when having invalid data.</li>
 <li>code tested in my local terminal and code Institue Heroku terminal.</li>
 </ul>
+
+<h1>Bugs</h1>
+
+<ul>
+<li>When I try to set the validate function in the project, I have set a separate validate_input function, but it cannot break the user from continuing if they provide wrong input. I solved it after discussing with mentor and adding while loop in survey_input()</li>
+<li>I also cannot import some data when running the survey because the food choice is uppercase, I added lower.() to avoid this happen again.</li>
+<li>When I calculate the average_age, I forget to flatten the list from the spreadsheet, I amend my for loop and it is solved, as advised by tutor.</li>
+</ul>
+
+<h1>Validator testing</h1>
+
+<ul>
+<li>PEP8</li>
+<Ul>
+<li>No Errors return from https://pep8ci.herokuapp.com/#</li>
+</ul>
+</ul>
+
+<h1>Deployment</h1>
+
+<h2>The project was deployed Code Institue Heroku mock terminal with the following steps</h2>
+<ul>
+<li>Connect to this repository</li>
+<li>Create a new app</li>
+<li>Add config var to add creds.json</li>
+<li>Add buildbacks to Python and NodeJS </li>
+<li>Link Heroku app to the repository</li>
+<li>click on Deploy</li> 
+</ul>
+
+<h1>Credits</h1>
+
+<ul>
+<li>Code Institue for Deploy terminal</li>
+<li>Mentor Aleksei Konovalov for discussing project outline and improvement</li>
+<li>A big thanks to Code Institue Tutors who discuss and suggest solutions esp in calculating average_age part </li>
+</ul>
