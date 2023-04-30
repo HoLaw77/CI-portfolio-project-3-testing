@@ -13,7 +13,10 @@ SCOPE = [
 CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
-SHEET = GSPREAD_CLIENT.open('lunch_survey')
+try:
+    SHEET = GSPREAD_CLIENT.open('lunch_survey')
+except:
+    SHEET = GSPREAD_CLIENT.create('lunch_survey')
 
 
 def survey_input():
