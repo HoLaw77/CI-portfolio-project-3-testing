@@ -60,7 +60,9 @@
 
 <h1>Testing</h1>
 
+<h2>I have manually tested the project by doing the following:</h2>
 <ul>
-<li></li>
-<li></li>
+<li>The code passed the PEP8 linter and confirm no problem.</li>
+<li>Use a while loop to ask user to enter again when having invalid data.</li>
+<li>code tested in my local terminal and code Institue Heroku terminal.</li>
 </ul>
