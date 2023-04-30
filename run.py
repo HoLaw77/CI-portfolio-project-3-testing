@@ -24,14 +24,14 @@ def survey_input():
         print('It is an anonymous survey on lunch choice.\n')
         print('We need your age, gender, food choice and will you buy later\n')
         print('Food choice: fish and chip/salad/sandwich/noodle\n')
-        
+
 
         age_input_str = input("Enter your age here:\n")
         while age_input_str.isnumeric() is not True:
             age_input_str = input("Error, please provide a number for age:\n")
         gender_input_str = input("Enter your gender here: male or female\n")
         while gender_input_str.lower() not in ("male", "female"):
-            gender_input_str = input("Error, please enter your gender again:\n")
+            gender_input_str = input("Error, please re-enter your gender:\n")
         food_choice_input_str = input(
             "Enter your food choice: salad, noodle, sandwich, fish and chip\n")
         while food_choice_input_str.lower() not in (
@@ -116,7 +116,7 @@ def survey_result():
     number_salad = sum(num.count("Yes") for num in salad_result)
     male_salad = sum(x.count("Male") for x in salad_result)
     female_salad = sum(y.count("Female") for y in salad_result)
-    ages = SHEET.worksheet("salad_sales").get("A2:A99")
+    ages = SHEET.worksheet("salad_sales").get("A2:A2000")
     # Flatten the list and convert strings to integers, advised by Tutor of CI
     num_ages = [int(age) for sublist in ages for age in sublist]
     # Now calculate the mean, advised by Tutor of CI
